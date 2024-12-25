@@ -1,6 +1,5 @@
 {
   "name": "personalportfolio",
-  "homepage": "https://samyfel.github.io/samyportfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -16,6 +15,7 @@
     "lucide-react": "^0.469.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^7.1.1",
     "three": "^0.171.0"
   },
   "devDependencies": {
