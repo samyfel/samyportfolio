@@ -1,20 +1,34 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Hero from './components/layout/Hero';
 import About from './components/layout/About';
-import Resume from './components/layout/Resume'; // Import Resume Section
-import Projects from './components/layout/Projects';
+import Resume from './components/layout/Resume';
 import Contact from './components/layout/Contact';
+import Writing from './components/layout/Writing';
+import Photography from './components/layout/Photography';
+import Projects from './components/layout/Projects';
 
 function App() {
     return (
-        <div className="min-h-screen bg-gray-900 text-white">
-            <Navbar />
-            <Hero />
-            <About />
-            <Resume />
-            <Projects />
-            <Contact />
-        </div>
+        <Router>
+            <div className="min-h-screen bg-gray-900 text-white">
+                <Navbar />
+                <Routes>
+                    <Route path="/" element={
+                        <>
+                            <Hero />
+                            <About />
+                            <Resume />
+                            <Contact />
+                        </>
+                    } />
+                    <Route path="/projects" element={<Projects />} />
+                    <Route path="/photography" element={<Photography />} />
+                    <Route path="/writing" element={<Writing />} />
+                    
+                </Routes>
+            </div>
+        </Router>
     );
 }
 

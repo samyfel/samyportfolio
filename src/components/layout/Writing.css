@@ -1,0 +1,35 @@
+.writing-container {
+    background-color: white; /* White background */
+    color: black; /* Black text */
+    font-family: 'Courier New', Courier, monospace; /* Typewriter font */
+    line-height: 1.5; /* Line height for readability */
+    padding: 20px; /* Padding around the content */
+}
+
+.writing-title {
+    font-size: 2em; /* Larger title */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+.writing-intro {
+    margin-bottom: 20px; /* Space below the intro text */
+}
+
+.writing-list {
+    margin-top: 20px; /* Space above the list */
+}
+
+.writing-item {
+    margin-bottom: 15px; /* Space between items */
+    border: 1px solid black; /* Optional: border around each item */
+    padding: 10px; /* Padding inside each item */
+}
+
+.writing-item-title {
+    font-weight: bold; /* Bold title */
+}
+
+.writing-item-link {
+    color: blue; /* Link color */
+    text-decoration: underline; /* Underline links */
+} 

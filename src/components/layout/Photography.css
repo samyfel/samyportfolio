@@ -1,0 +1,15 @@
+.photography-container {
+    max-width: 1800px; /* Set a max width for the container */
+}
+
+.photography-image {
+    width: 100%; /* Full width */
+    height: 400px; /* Fixed height for uniformity */
+    object-fit: cover; /* Cover the area while maintaining aspect ratio */
+    border: 16px solid white; /* Thicker white border around images */
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.photography-image:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+} 

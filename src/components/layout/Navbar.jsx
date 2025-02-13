@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Camera, Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,9 +25,10 @@ const Navbar = () => {
                     </div>
 
                     <div className="hidden md:flex items-center space-x-4">
-                        <a href="#about" className="hover:text-blue-500 transition-colors">About</a>
-                        <a href="#projects" className="hover:text-blue-500 transition-colors">Projects</a>
-                        <a href="#contact" className="hover:text-blue-500 transition-colors">Contact</a>
+                        <Link to="/" className="hover:text-blue-500 transition-colors">Home</Link>
+                        <Link to="/projects" className="hover:text-blue-500 transition-colors">Projects</Link>
+                        <Link to="/photography" className="hover:text-blue-500 transition-colors">Photography</Link>
+                        <Link to="/writing" className="hover:text-blue-500 transition-colors">Writing</Link>
                     </div>
                 </div>
             </div>
@@ -34,9 +36,10 @@ const Navbar = () => {
             {isMenuOpen && (
                 <div className="md:hidden">
                     <div className="px-2 pt-2 pb-3 space-y-1">
-                        <a href="#about" className="block px-3 py-2 hover:bg-gray-700 rounded-md">About</a>
-                        <a href="#projects" className="block px-3 py-2 hover:bg-gray-700 rounded-md">Projects</a>
-                        <a href="#contact" className="block px-3 py-2 hover:bg-gray-700 rounded-md">Contact</a>
+                        <Link to="/" className="block px-3 py-2 hover:bg-gray-700 rounded-md">Home</Link>
+                        <Link to="/projects" className="block px-3 py-2 hover:bg-gray-700 rounded-md">Projects</Link>
+                        <Link to="/photography" className="block px-3 py-2 hover:bg-gray-700 rounded-md">Photography</Link>
+                        <Link to="/writing" className="block px-3 py-2 hover:bg-gray-700 rounded-md">Writing</Link>
                     </div>
                 </div>
             )}
