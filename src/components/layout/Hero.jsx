@@ -1,3 +1,6 @@
+import { Link } from 'react-router-dom';
+import profilePic from '../../assets/images/portfoliopic.png';
+import logo from '../../assets/images/AF.png';
 import ParticleRing from '../three/ParticleRing';
 
 const Hero = () => {

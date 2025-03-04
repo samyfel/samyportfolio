@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Camera, Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import logo from '../../assets/images/AF.png';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,7 +12,7 @@ const Navbar = () => {
             <div className="w-full px-6">
                 <div className="flex justify-between items-center h-20">
                     <div className="flex-shrink-0 flex items-center">
-                        <img src="public/AF.png" alt="Logo" className="h-12 w-12"/>
+                        <img src={logo} alt="Logo" className="h-12 w-12"/>
                     </div>
 
 

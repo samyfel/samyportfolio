@@ -1,16 +1,18 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './Photography.css'; // Import the CSS file for styles
 
 function Photography() {
     const [selectedImage, setSelectedImage] = useState(null);
+    const [images, setImages] = useState([]);
 
-    // Update these paths to match your actual image locations
-    const images = [
-        '/images/sicily_kids.jpg',
-        '/images/sicily_architecture.jpg',
-        '/images/sicily_drive.jpg'
-        // Add more images as needed
-    ];
+    useEffect(() => {
+        // Updated path to match your folder structure
+        const imageModules = import.meta.glob('../../assets/photography/*.jpg', { eager: true });
+        console.log('Image modules:', imageModules); // Debug log
+        const imageUrls = Object.values(imageModules).map(module => module.default);
+        console.log('Image URLs:', imageUrls); // Debug log
+        setImages(imageUrls);
+    }, []);
 
     return (
         <div className="photography-container container mx-auto px-4 py-16">

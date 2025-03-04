@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import profilePic from '../../assets/images/portfoliopic.png';
 
 const About = () => {
     const [typedText, setTypedText] = useState("");
@@ -82,7 +83,7 @@ const About = () => {
                     <div className="relative group">
                         <div className="rounded-3xl border-8 border-gray-600 group-hover:border-blue-500 transition-all duration-300 shadow-lg p-2">
                             <img
-                                src="public/portfoliopic.png" // Replace with your image path
+                                src={profilePic}
                                 alt="About Me"
                                 className="w-full max-w-sm rounded-2xl"
                             />
