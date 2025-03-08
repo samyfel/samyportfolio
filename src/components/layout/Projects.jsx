@@ -33,9 +33,8 @@ const Projects = () => {
             title: "DripDropLearning - iOS Educational App",
             description: "Developed an iOS application for a Mobile Development course using Swift. The app serves as an educational platform for parents and babysitters to discover and share engaging activities for children. Features include activity sharing, progress tracking, and a community-driven content library.",
             technologies: ["Swift", "iOS Development", "UI/UX Design", "Firebase"],
-            link: "https://github.com/kaylatrinh/DripDropLearning",
             image: "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?q=80&w=2670&auto=format&fit=crop",
-            github: "#",
+            github: "https://github.com/kaylatrinh/DripDropLearning",
             category: "Development"
         },
         {
@@ -44,7 +43,6 @@ const Projects = () => {
             technologies: ["React", "JavaScript", "CSS", "Responsive Design"],
             image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2670&auto=format&fit=crop",
             link: "https://samyfel.com",
-            github: "#",
             category: "Development"
         },
         {
