@@ -17,12 +17,11 @@ const Hero = () => {
             >
                 <div className="max-w-3xl pointer-events-auto">
                     <h1 className="text-5xl md:text-7xl font-extrabold mb-6 text-white leading-tight">
-                        Hi, I'm <span className="text-blue-500">Samy Fallah</span>
+                        Welcome, I'm <span className="text-blue-500">Samy</span>
                     </h1>
                     <p className="text-lg md:text-2xl text-gray-300 font-light mb-8">
-                        A passionate <span className="text-blue-500">Developer</span> and
-                        <span className="text-blue-500"> Entrepreneur</span> crafting
-                        innovative solutions and pushing the boundaries of technology.
+                        A <span className="text-blue-500">Thinker</span> and
+                        <span className="text-blue-500"> Entrepreneur</span> with a passion for creating, exploring, and building.
                     </p>
                     <Link
                         to="/projects"

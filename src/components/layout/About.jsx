@@ -72,12 +72,14 @@ const About = () => {
                     </h2>
                     <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
                         I'm a Computer Science & Business Administration student at Northeastern University with a passion for technology, entrepreneurship, and innovation. My academic journey combines technical expertise with business acumen, allowing me to bridge the gap between these two worlds.
+
                     </p>
                     <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-                        With experience at leading consulting firms like McKinsey and BCG, I've developed a strategic mindset and problem-solving skills that complement my technical abilities. I'm particularly interested in the intersection of AI, finance, and sustainable technology solutions.
+                        With experience at leading consulting firms like McKinsey and BCG, I've developed a strategic mindset and problem-solving skills that complement my technical abilities. I'm particularly interested in the intersection of AI, finance, and business.
+
                     </p>
                     <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-                        When I'm not coding or working on business strategies, you can find me exploring photography, writing, or traveling to discover new perspectives and inspiration.
+                        When i'm not working or studying, you can find me exercising, exploring photography, writing, or traveling to discover new perspectives and inspiration.
                     </p>
                     <div className="mt-6 about-buttons">
                         <Link to="/projects" className="primary-button">
