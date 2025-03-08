@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from 'react-router-dom';
 import profilePic from '../../assets/images/portfoliopic.png';
+import './About.css';
 
 const About = () => {
     const [typedText, setTypedText] = useState("");
@@ -60,20 +62,20 @@ const About = () => {
                         <span className="ml-1 w-1 bg-white h-7 animate-blink"></span> {/* Blinking cursor */}
                     </h2>
                     <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-                        I'm a passionate <span className="text-blue-500">developer</span> and
-                        <span className="text-blue-500"> entrepreneur</span> with a focus on crafting
-                        innovative solutions to solve real-world problems. With a deep
-                        interest in technology and design, I bring ideas to life through
-                        cutting-edge tools and creativity. Whether building intuitive user
-                        experiences or developing efficient back-end systems, my goal is to
-                        push the boundaries of what's possible.
+                        I'm a Computer Science & Business Administration student at Northeastern University with a passion for technology, entrepreneurship, and innovation. My academic journey combines technical expertise with business acumen, allowing me to bridge the gap between these two worlds.
                     </p>
-                    <div className="mt-6">
-                        <a
-                            href="#projects"
-                            className="inline-block bg-blue-500 hover:bg-blue-600 text-white text-lg font-medium px-6 py-3 rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105"
-                        >
-                            See My Work
+                    <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+                        With experience at leading consulting firms like McKinsey and BCG, I've developed a strategic mindset and problem-solving skills that complement my technical abilities. I'm particularly interested in the intersection of AI, finance, and sustainable technology solutions.
+                    </p>
+                    <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+                        When I'm not coding or working on business strategies, you can find me exploring photography, writing, or traveling to discover new perspectives and inspiration.
+                    </p>
+                    <div className="mt-6 about-buttons">
+                        <Link to="/projects" className="primary-button">
+                            See my work
+                        </Link>
+                        <a href="/resume.pdf" className="secondary-button" target="_blank" rel="noopener noreferrer">
+                            Download Resume
                         </a>
                     </div>
                 </div>

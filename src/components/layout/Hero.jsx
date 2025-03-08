@@ -24,11 +24,11 @@ const Hero = () => {
                         <span className="text-blue-500"> Entrepreneur</span> crafting
                         innovative solutions and pushing the boundaries of technology.
                     </p>
-                    <a
-                        href="projects"
+                    <Link
+                        to="/projects"
                         className="inline-block bg-blue-500 hover:bg-blue-600 text-white text-lg font-medium px-6 py-3 rounded-full transition duration-300">
                         Explore my work
-                    </a>
+                    </Link>
                 </div>
             </div>
         </div>
