@@ -11,13 +11,22 @@ const About = () => {
     const aboutRef = useRef(null); // Reference to the About section
 
     useEffect(() => {
+        // Start animation immediately on mobile devices
+        if (window.innerWidth <= 768) {
+            setIsInView(true);
+            return;
+        }
+
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
                     setIsInView(true); // Start typing animation when in view
                 }
             },
-            { threshold: 0.5 } // Trigger when 50% of the section is in view
+            { 
+                threshold: 0.1, // Lower threshold to trigger earlier
+                rootMargin: "0px 0px -10% 0px" // Trigger before element is fully in view
+            }
         );
 
         if (aboutRef.current) {
@@ -25,7 +34,7 @@ const About = () => {
         }
 
         return () => {
-            if (aboutRef.current) {
+            if (aboutRef.current && observer) {
                 observer.unobserve(aboutRef.current);
             }
         };
