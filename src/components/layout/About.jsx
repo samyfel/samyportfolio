@@ -85,7 +85,11 @@ const About = () => {
                         <Link to="/projects" className="primary-button">
                             See my work
                         </Link>
-                        <a href="/resume.pdf" className="secondary-button" target="_blank" rel="noopener noreferrer">
+                        <a
+                        href="/Samy_Fallah_CV.pdf" // Correct file path for download
+                        download="SamyFallah_Resume.pdf" // Desired file name for download
+                        className="secondary-button"
+                    >
                             Download Resume
                         </a>
                     </div>
