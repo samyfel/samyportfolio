@@ -71,15 +71,14 @@ const About = () => {
                         <span className="ml-1 w-1 bg-white h-7 animate-blink"></span> {/* Blinking cursor */}
                     </h2>
                     <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-                        I'm a Computer Science & Business Administration student at Northeastern University with a passion for technology, entrepreneurship, and innovation. My academic journey combines technical expertise with business acumen, allowing me to bridge the gap between these two worlds.
+                        i'm a CS & Fintech student at Northeastern University with a passion for innovation and building 👨‍🍳.
 
-                    </p>
+                    </p> <br></br><br></br>
                     <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-                        With experience at leading consulting firms like McKinsey and BCG, I've developed a strategic mindset and problem-solving skills that complement my technical abilities. I'm particularly interested in the intersection of AI, finance, and business.
-
-                    </p>
+                        currently, i'm working on <a href="https://blaiapp.io/" className="text-blue-500">blai</a>, an AI-powered solution that makes crypto research and investing easy and accessible 🚀🟢.
+                    </p> <br></br><br></br>
                     <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-                        When i'm not working or studying, you can find me exercising, exploring photography, writing, or traveling to discover new perspectives and inspiration.
+                        explore the website to explore some of my other passions outside of work 🌐👁️‍🗨️.
                     </p>
                     <div className="mt-6 about-buttons">
                         <Link to="/projects" className="primary-button">
