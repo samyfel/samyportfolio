@@ -69,17 +69,17 @@ const About = () => {
                     <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 flex items-center">
                         {typedText}
                         <span className="ml-1 w-1 bg-white h-7 animate-blink"></span> {/* Blinking cursor */}
-                    </h2>
+                    </h2> <br></br><br></br>
                     <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
                         i'm a CS & Fintech student at Northeastern University with a passion for innovation and building 👨‍🍳.
 
-                    </p> <br></br><br></br>
+                    </p> <br></br><br></br><br></br>
                     <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
                         currently, i'm working on <a href="https://blaiapp.io/" className="text-blue-500">blai</a>, an AI-powered solution that makes crypto research and investing easy and accessible 🚀🟢.
-                    </p> <br></br><br></br>
+                    </p> <br></br><br></br><br></br>
                     <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
                         explore the website to explore some of my other passions outside of work 🌐👁️‍🗨️.
-                    </p>
+                    </p> <br></br><br></br><br></br>
                     <div className="mt-6 about-buttons">
                         <Link to="/projects" className="primary-button">
                             See my work
