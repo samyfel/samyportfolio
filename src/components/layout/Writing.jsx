@@ -12,84 +12,20 @@ function Writing() {
 
     const writings = [
         {
-            title: "Exploring Sicily",
-            excerpt: "A journey through the beautiful landscapes and rich culture of Sicily.",
-            content: `Sicily, the largest Mediterranean island, is a treasure trove of history, culture, and natural beauty. From the ancient Greek temples of Agrigento to the bustling markets of Palermo, every corner of this island tells a story.
-
-            The island's diverse landscape includes the imposing Mount Etna, Europe's largest active volcano, pristine beaches with crystal-clear waters, and rolling hills covered with olive groves and vineyards.`,
+            title: "Solitude",
+            excerpt: "A brief, personal, reflection on solitude.",
+            content: `i think solitude is important. more specifically being comfortable in a state of solitude. this is a state that is ever present in the subconscious and that one can’t escape, hence, being able to notice it, understand it and what you’re feeling, and flourishing in it is extremely important. It’s definitely something i’m still trying to learn myself and i think it’s one of the more difficult things to master. While i tell myself that im okay with being alone and am comfortable in a state of solitude, i often revert to thinking about whether or not i actually am alone. I think at times you might not have a certain aspect of a relationship in your life and you might feel alone, and in turn, think you’re alone and in solitude, when in reality that’s not the case. I think few people have truly embraced a state of solitude and even fewer have been able to master it. In our daily lives i feel like we find excuses and reasons to not be alone. Relationships to fill in voids that don’t necessarily need to be filled. I try and think about these relationships and open my eyes when im chasing something simply for a need of comfort versus an actual necessity. Sometimes i’ll say im comfortable alone and then fill up my time and thoughts with people that maybe arent part supposed to be there in the first place and have been forced in by my urge of wanting. then again, those people and that urge and the way that my urge attracted those people was meant to happen and i was meant to be in such a place and position to notice something that maybe isn’t apparent now but will be eventually.`,
+            
+        },
+        {
+            title: "Thinking...",
+            excerpt: "will have more soon",
+            content: "Coming soon...",
             image: sicilyImage,
             imageCaption: "Ancient architecture in Sicily, showcasing the island's rich historical heritage.",
             contentAfterImage: `Sicilian cuisine is a reflection of its complex history, with influences from Greek, Arab, Spanish, and Italian traditions. The food scene is characterized by fresh seafood, aromatic herbs, and sweet delicacies like cannoli and cassata.
 
             The warmth of Sicilian hospitality makes visitors feel instantly at home, creating memories that last a lifetime.`
-        },
-        {
-            title: "The Art of Photography",
-            excerpt: "Understanding the nuances of capturing moments through a lens.",
-            content: `Photography is more than just pointing a camera and clicking a button; it's about seeing the world differently and capturing moments that tell a story.
-
-            The technical aspects of photography—understanding exposure, composition, and lighting—are just the foundation. The true art lies in developing a unique perspective and style that reflects your vision.
-
-            Digital photography has democratized the medium, allowing anyone with a smartphone to create compelling images. However, mastering the craft still requires dedication, practice, and a keen eye for detail.
-
-            Whether you're capturing landscapes, portraits, or street scenes, the goal remains the same: to freeze a moment in time that evokes emotion and connects with viewers on a deeper level.`
-        },
-        {
-            title: "Traveling on a Budget",
-            excerpt: "Tips and tricks for exploring the world without breaking the bank.",
-            content: `Traveling doesn't have to be expensive. With careful planning and a few smart strategies, you can explore the world without emptying your wallet.
-
-            Start by being flexible with your travel dates and destinations. Off-season travel often means lower prices for flights and accommodations, as well as fewer crowds at popular attractions.
-
-            Consider alternative accommodations like hostels, guesthouses, or vacation rentals, which can be significantly cheaper than hotels. Many also offer kitchen facilities, allowing you to save money by preparing some of your own meals.
-
-            Public transportation, walking, and cycling are not only budget-friendly ways to get around but also provide opportunities to experience local life and discover hidden gems off the tourist path.
-
-            Take advantage of free activities like walking tours, public parks, and museums with free admission days. Often, the most memorable experiences come from simply wandering through local neighborhoods and markets.`
-        },
-        {
-            title: "The Digital Nomad Lifestyle",
-            excerpt: "Balancing work and travel in the age of remote work.",
-            content: `The rise of remote work has given birth to a new lifestyle: the digital nomad. These location-independent professionals leverage technology to work from anywhere in the world, blending productivity with exploration.
-
-            While the freedom to work from a beach in Bali or a café in Lisbon sounds idyllic, the digital nomad lifestyle comes with its own set of challenges. Reliable internet, time zone differences, work-life balance, and loneliness are hurdles that nomads must navigate.
-
-            Successful digital nomads develop routines and systems that allow them to maintain productivity while embracing the spontaneity of travel. Co-working spaces, productivity apps, and communities of like-minded individuals have emerged to support this growing movement.
-
-            Despite the challenges, the rewards of the digital nomad lifestyle—cultural immersion, personal growth, and a broader worldview—make it an appealing option for those seeking an alternative to the traditional 9-to-5.`
-        },
-        {
-            title: "Sustainable Travel Practices",
-            excerpt: "How to explore the world while minimizing your environmental impact.",
-            content: `As awareness of climate change and environmental degradation grows, travelers are increasingly seeking ways to explore the world more sustainably.
-
-            Start with transportation choices: consider trains over planes for shorter distances, use public transportation or bike-sharing programs at your destination, and offset carbon emissions when flying is unavoidable.
-
-            Choose accommodations that demonstrate environmental commitment through practices like water conservation, renewable energy use, waste reduction, and support for local communities.
-
-            Respect local ecosystems by staying on marked trails, avoiding wildlife disturbance, and never removing natural or cultural artifacts. Participate in beach cleanups or conservation projects to leave destinations better than you found them.
-
-            Support the local economy by eating at locally-owned restaurants, shopping at markets and artisan shops, and hiring local guides. This not only reduces the carbon footprint of your consumption but also ensures tourism benefits host communities.
-
-            Remember that sustainable travel is not just about environmental impact but also about cultural respect and economic fairness. By traveling thoughtfully, we can ensure that the places we love remain vibrant and accessible for generations to come.`
-        },
-        {
-            title: "The Psychology of Travel",
-            excerpt: "How exploring new places changes our brain and perspective.",
-            content: `Travel is more than just a leisure activity; it's a powerful catalyst for personal growth and cognitive development. Research shows that experiencing new environments and cultures can literally rewire our brains.
-
-            Novel experiences trigger the release of dopamine, enhancing our mood and motivation. The challenges of navigating unfamiliar situations build cognitive flexibility and problem-solving skills, while exposure to different cultural perspectives increases empathy and reduces implicit bias.
-
-            The psychological benefits of travel extend beyond the trip itself. Anticipation of upcoming travel boosts happiness, while memories of past adventures provide lasting well-being benefits. Studies suggest that money spent on experiences like travel creates more lasting happiness than material purchases.
-
-            Even brief exposures to different environments can spark creativity and innovation by breaking established thought patterns. This "psychological distance" allows us to see problems from new angles and consider solutions we might otherwise overlook.
-
-            In an increasingly divided world, the perspective-shifting power of travel may be more valuable than ever, reminding us of our common humanity despite cultural differences.`
-        },
-        {
-            title: "Thinking...",
-            excerpt: "will have more soon",
-            content: "Coming soon..."
         },
         {
             title: "Thinking...",
