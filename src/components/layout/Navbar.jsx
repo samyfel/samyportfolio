@@ -1,10 +1,20 @@
 import { useState } from 'react';
 import { Camera, Menu, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../assets/images/AF.png';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const navigate = useNavigate();
+
+    const handleLinkClick = () => {
+        setIsMenuOpen(false);
+    };
+
+    const handleLogoClick = () => {
+        setIsMenuOpen(false);
+        navigate('/');
+    };
 
     return (
         <nav
@@ -12,9 +22,13 @@ const Navbar = () => {
             <div className="w-full px-6">
                 <div className="flex justify-between items-center h-20">
                     <div className="flex-shrink-0 flex items-center">
-                        <img src={logo} alt="Logo" className="h-12 w-12"/>
+                        <button 
+                            onClick={handleLogoClick}
+                            className="focus:outline-none"
+                        >
+                            <img src={logo} alt="Logo" className="h-12 w-12"/>
+                        </button>
                     </div>
-
 
                     <div className="md:hidden">
                         <button
@@ -26,10 +40,10 @@ const Navbar = () => {
                     </div>
 
                     <div className="hidden md:flex items-center space-x-4">
-                        <Link to="/" className="hover:text-blue-500 transition-colors">Home</Link>
-                        <Link to="/projects" className="hover:text-blue-500 transition-colors">Projects</Link>
-                        <Link to="/photography" className="hover:text-blue-500 transition-colors">Photography</Link>
-                        <Link to="/writing" className="hover:text-blue-500 transition-colors">Writing</Link>
+                        <Link to="/" onClick={handleLinkClick} className="hover:text-blue-500 transition-colors">Home</Link>
+                        <Link to="/projects" onClick={handleLinkClick} className="hover:text-blue-500 transition-colors">Projects</Link>
+                        <Link to="/photography" onClick={handleLinkClick} className="hover:text-blue-500 transition-colors">Photography</Link>
+                        <Link to="/writing" onClick={handleLinkClick} className="hover:text-blue-500 transition-colors">Writing</Link>
                     </div>
                 </div>
             </div>
@@ -37,10 +51,10 @@ const Navbar = () => {
             {isMenuOpen && (
                 <div className="md:hidden">
                     <div className="px-2 pt-2 pb-3 space-y-1">
-                        <Link to="/" className="block px-3 py-2 hover:bg-gray-700 rounded-md">Home</Link>
-                        <Link to="/projects" className="block px-3 py-2 hover:bg-gray-700 rounded-md">Projects</Link>
-                        <Link to="/photography" className="block px-3 py-2 hover:bg-gray-700 rounded-md">Photography</Link>
-                        <Link to="/writing" className="block px-3 py-2 hover:bg-gray-700 rounded-md">Writing</Link>
+                        <Link to="/" onClick={handleLinkClick} className="block px-3 py-2 hover:bg-gray-700 rounded-md">Home</Link>
+                        <Link to="/projects" onClick={handleLinkClick} className="block px-3 py-2 hover:bg-gray-700 rounded-md">Projects</Link>
+                        <Link to="/photography" onClick={handleLinkClick} className="block px-3 py-2 hover:bg-gray-700 rounded-md">Photography</Link>
+                        <Link to="/writing" onClick={handleLinkClick} className="block px-3 py-2 hover:bg-gray-700 rounded-md">Writing</Link>
                     </div>
                 </div>
             )}
