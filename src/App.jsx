@@ -7,10 +7,12 @@ import Contact from './components/layout/Contact';
 import Writing from './components/layout/Writing';
 import Photography from './components/layout/Photography';
 import Projects from './components/layout/Projects';
+import CustomCursor from './components/layout/CustomCursor';
 
 function App() {
     return (
         <Router>
+            <CustomCursor />
             <div className="min-h-screen bg-gray-900 text-white">
                 <Navbar />
                 <Routes>
