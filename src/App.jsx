@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
+import ScrollToTop from './components/layout/ScrollToTop';
 import Hero from './components/layout/Hero';
 import TimelineStory from './components/layout/TimelineStory';
 import Contact from './components/layout/Contact';
@@ -14,6 +15,7 @@ function App() {
 
     return (
         <Router>
+            <ScrollToTop />
             <div className="min-h-screen bg-paper text-ink">
                 <Navbar onOpenResume={openResume} />
                 <Routes>
