@@ -1,32 +1,34 @@
+import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Hero from './components/layout/Hero';
-import About from './components/layout/About';
-import Resume from './components/layout/Resume';
+import TimelineStory from './components/layout/TimelineStory';
 import Contact from './components/layout/Contact';
 import Writing from './components/layout/Writing';
 import Photography from './components/layout/Photography';
-import Projects from './components/layout/Projects';
+import ResumeModal from './components/layout/ResumeModal';
 
 function App() {
+    const [resumeOpen, setResumeOpen] = useState(false);
+    const openResume = () => setResumeOpen(true);
+
     return (
         <Router>
-            <div className="min-h-screen bg-gray-900 text-white">
-                <Navbar />
+            <div className="min-h-screen bg-paper text-ink">
+                <Navbar onOpenResume={openResume} />
                 <Routes>
                     <Route path="/" element={
                         <>
-                            <Hero />
-                            <About />
-                            <Resume />
+                            <Hero onOpenResume={openResume} />
+                            <TimelineStory />
                             <Contact />
                         </>
                     } />
-                    <Route path="/projects" element={<Projects />} />
                     <Route path="/photography" element={<Photography />} />
                     <Route path="/writing" element={<Writing />} />
-                    
+
                 </Routes>
+                <ResumeModal open={resumeOpen} onClose={() => setResumeOpen(false)} />
             </div>
         </Router>
     );

@@ -1,76 +1,116 @@
-import { useState, useEffect } from 'react';
-import './Photography.css'; // Import the CSS file for styles
+import { useMemo, useState } from 'react';
+import { motion } from 'framer-motion';
+import { PHOTOS } from '../../data/photos';
+import MorphGallery from './MorphGallery';
 
-function Photography() {
-    const [selectedImage, setSelectedImage] = useState(null);
-    const [images, setImages] = useState([]);
+const images = import.meta.glob('../../assets/photography/*.jpg', { eager: true });
 
-    useEffect(() => {
-        // Updated path to match your folder structure
-        const imageModules = import.meta.glob('../../assets/photography/*.jpg', { eager: true });
-        console.log('Image modules:', imageModules); // Debug log
-        const imageUrls = Object.values(imageModules).map(module => module.default);
-        console.log('Image URLs:', imageUrls); // Debug log
-        setImages(imageUrls);
-    }, []);
+const frameLabel = (file) => {
+    const m = file.match(/R(\d+)-([A-Za-z]?\d+)/);
+    return m ? `R${m[1]} · ${m[2]}` : null;
+};
+
+const PhotoCard = ({ photo }) => {
+    const [flipped, setFlipped] = useState(false);
+    const src = images[`../../assets/photography/${photo.file}`]?.default;
+    const label = frameLabel(photo.file);
 
     return (
-        <div className="photography-container container mx-auto px-4 py-16">
-            <div style={{ marginTop: '60px' }}> {/* Add margin to create space from the top */}
-                <h2 className="text-3xl font-bold mb-8">Photography</h2>
-            </div>
-            
-            {/* Image Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {images.map((image, index) => (
-                    <div
-                        key={index}
-                        className="relative overflow-hidden cursor-pointer"
-                        onClick={() => setSelectedImage(index)}
-                    >
-                        <img
-                            src={image}
-                            alt={`Gallery image ${index + 1}`}
-                            className="photography-image" // Use a specific class for images
-                        />
-                    </div>
-                ))}
-            </div>
-
-            {/* Modal for full-size image view */}
-            {selectedImage !== null && (
-                <div 
-                    className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center"
-                    onClick={() => setSelectedImage(null)}
+        <div style={{ perspective: 1200 }} className="aspect-[4/3]">
+            <motion.div
+                className="relative w-full h-full"
+                whileHover={{ rotateY: flipped ? 0 : -10, scale: flipped ? 1 : 1.02 }}
+                transition={{ type: 'spring', stiffness: 220, damping: 22 }}
+            >
+                <motion.div
+                    className="relative w-full h-full cursor-pointer"
+                    style={{ transformStyle: 'preserve-3d' }}
+                    animate={{ rotateY: flipped ? 180 : 0 }}
+                    transition={{ type: 'spring', stiffness: 220, damping: 22 }}
+                    onClick={() => setFlipped((f) => !f)}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`Photo${label ? `, frame ${label}` : ''}. Click to flip for details.`}
+                    onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && setFlipped((f) => !f)}
                 >
-                    <button 
-                        className="absolute left-4 top-1/2 text-white text-4xl"
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            setSelectedImage(prev => (prev > 0 ? prev - 1 : images.length - 1));
-                        }}
+                    <div
+                        className="absolute inset-0 rounded-sm overflow-hidden border border-ink/10 shadow-sm"
+                        style={{ backfaceVisibility: 'hidden' }}
                     >
-                        ‹
-                    </button>
-                    <img
-                        src={images[selectedImage]}
-                        alt={`Full size ${selectedImage + 1}`}
-                        className="max-h-[90vh] max-w-[90vw] object-contain"
-                        onClick={(e) => e.stopPropagation()}
-                    />
-                    <button 
-                        className="absolute right-4 top-1/2 text-white text-4xl"
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            setSelectedImage(prev => (prev < images.length - 1 ? prev + 1 : 0));
-                        }}
+                        <img src={src} alt="" className="w-full h-full object-cover" draggable={false} />
+                        {label && (
+                            <span className="absolute bottom-1.5 right-2 font-mono text-[10px] text-paper bg-ink/50 px-1.5 py-0.5 rounded-sm backdrop-blur-sm">
+                                {label}
+                            </span>
+                        )}
+                    </div>
+
+                    <div
+                        className="absolute inset-0 rounded-sm border border-ink/15 bg-paper shadow-sm p-4 flex flex-col"
+                        style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
                     >
-                        ›
-                    </button>
-                </div>
-            )}
+                        <div className="font-mono text-[10px] text-ink-muted/50">{label ?? '—'}</div>
+                        <div className="mt-auto space-y-2.5">
+                            <div>
+                                <div className="font-mono text-[10px] text-ink-muted/60">location</div>
+                                <div className="text-sm text-ink">{photo.location}</div>
+                            </div>
+                            <div>
+                                <div className="font-mono text-[10px] text-ink-muted/60">camera</div>
+                                <div className="text-sm text-ink">{photo.camera}</div>
+                            </div>
+                            <div>
+                                <div className="font-mono text-[10px] text-ink-muted/60">note</div>
+                                <div className="font-serif italic text-sm text-ink-muted leading-snug">
+                                    {photo.note}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </motion.div>
+            </motion.div>
         </div>
     );
-}
+};
 
-export default Photography; 
+const Photography = () => {
+    const morphPhotos = useMemo(() => [...PHOTOS.slice(0, 3), ...PHOTOS.slice(-2)], []);
+    const gridPhotos = useMemo(() => PHOTOS.slice(3, -2), []);
+
+    const morphItems = useMemo(
+        () =>
+            morphPhotos.map((photo) => ({
+                src: images[`../../assets/photography/${photo.file}`]?.default,
+                alt: frameLabel(photo.file) ? `Frame ${frameLabel(photo.file)}` : 'Photograph',
+            })),
+        [morphPhotos],
+    );
+
+    return (
+        <section className="bg-paper pt-32 pb-24">
+            <div className="max-w-5xl mx-auto px-6 sm:px-10">
+                <h1 className="font-serif text-4xl sm:text-5xl text-ink mb-2">Photography</h1>
+                <p className="font-mono text-xs text-ink-muted/60 mb-12">
+                    # film, mostly — dissolving between frames, drag or use the arrows
+                </p>
+            </div>
+
+            <div className="relative w-screen left-1/2 -translate-x-1/2">
+                <MorphGallery items={morphItems} height="70vh" autoplay={6000} />
+            </div>
+
+            <div className="max-w-5xl mx-auto px-6 sm:px-10 mt-16">
+                <p className="font-mono text-xs text-ink-muted/60 mb-8">
+                    # {gridPhotos.length} more frames from the roll — click one to flip it
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {gridPhotos.map((photo) => (
+                        <PhotoCard key={photo.file} photo={photo} />
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default Photography;
