@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const SITE_URL = 'https://samyfel.com';
+const SITE_URL = 'https://www.samyfel.com';
 
 const setMetaByName = (name, content) => {
     let el = document.querySelector(`meta[name="${name}"]`);
